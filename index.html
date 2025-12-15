@@ -1,55 +1,263 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamid Ibrahim | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            line-height: 1.6;
+        /* Alex Baker-inspired Color Scheme */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
         header {
             text-align: center;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 20px;
+            padding: 50px 20px;
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: white;
+            border-radius: 10px;
             margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
         }
+        
         h1 {
-            color: #2c3e50;
+            font-size: 2.8em;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
+        
+        .tagline {
+            font-size: 1.2em;
+            color: #ecf0f1;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            color: #f1c40f;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            color: #f1c40f;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        
         section {
-            background: #f8f9fa;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 5px;
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #3498db;
+            transition: transform 0.3s ease;
         }
-        .contact {
+        
+        section:hover {
+            transform: translateY(-3px);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+        
+        h3 {
+            color: #2980b9;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        ul li:before {
+            content: "▸";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .skill-tag {
+            display: inline-block;
             background: #e8f4fc;
+            color: #2980b9;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+            border: 1px solid #d6eaf8;
         }
+        
+        .skill-tag.highlight {
+            background: #3498db;
+            color: white;
+        }
+        
+        .contact-info {
+            background: linear-gradient(to right, #e8f4fc, #d6eaf8);
+            border-left: 5px solid #2ecc71;
+        }
+        
+        .basketball-section {
+            background: linear-gradient(to right, #fff8e1, #fff3cd);
+            border-left: 5px solid #f1c40f;
+        }
+        
         a {
             color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .email-btn {
+            display: inline-block;
+            background: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        
+        .email-btn:hover {
+            background: #27ae60;
+            text-decoration: none;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            section {
+                padding: 20px;
+            }
+            header {
+                padding: 30px 15px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Hamid Ibrahim</h1>
-        <p>Computer Science Student | Python Developer | Project Management</p>
-        <p><strong>Semi-Professional Athlete:</strong> Cardiff City Basketball</p>
+        <p class="tagline">Computer Science Student | Python Developer | Project Management Enthusiast</p>
+        <p class="subtitle"><i class="fas fa-basketball-ball"></i> Semi-Professional Athlete for Cardiff City Basketball</p>
     </header>
-    
-    <section>
-        <h2>About Me</h2>
-        <p>Hi, I'm Hamid Ibrahim, a 21-year-old Computer Science student with a passion for technology and sports.</p>
-        <p><strong>Skills:</strong> Python programming, Project Management</p>
-        <p><strong>Hobbies:</strong> Reading, Gym, Basketball</p>
+
+    <section id="about">
+        <h2><i class="fas fa-user"></i> About Me</h2>
+        <ul>
+            <li><strong>👋 Hi, I'm Hamid Ibrahim</strong>, a 21-year-old student and athlete with a drive for technology and disciplined execution.</li>
+            <li><strong>🎓 Primary Field:</strong> I am currently pursuing my degree in <strong class="highlight">Computer Science</strong>, building a strong foundation in software development and system design.</li>
+            <li><strong>🏀 Life as an Athlete:</strong> As a <strong class="highlight">Semi-Professional Basketball Player for Cardiff City Basketball</strong>, I've developed <strong>teamwork, discipline, and performance under pressure</strong>.</li>
+            <li><strong>🌟 Hobbies & Interests:</strong> Passionate about <strong>reading</strong> (technology & personal development) and maintain a rigorous <strong>gym</strong> routine.</li>
+        </ul>
     </section>
-    
-    <section class="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:ihamid514@gmail.com">ihamid514@gmail.com</a></p>
+
+    <section id="skills">
+        <h2><i class="fas fa-tools"></i> Skills & Proficiencies</h2>
+        
+        <h3>Technical Skills</h3>
+        <div>
+            <span class="skill-tag highlight">Python</span>
+            <span class="skill-tag">Object-Oriented Programming</span>
+            <span class="skill-tag">Data Structures</span>
+            <span class="skill-tag">Algorithms</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">VS Code</span>
+        </div>
+        
+        <h3>Professional Skills</h3>
+        <div>
+            <span class="skill-tag highlight">Project Management</span>
+            <span class="skill-tag">Agile/Scrum</span>
+            <span class="skill-tag">Team Leadership</span>
+            <span class="skill-tag">Time Management</span>
+            <span class="skill-tag">Problem Solving</span>
+        </div>
     </section>
+
+    <section class="basketball-section">
+        <h2><i class="fas fa-trophy"></i> Athletic Background</h2>
+        <ul>
+            <li><strong>Team:</strong> Cardiff City Basketball (Semi-Professional)</li>
+            <li><strong>Skills Developed:</strong> Team collaboration, Strategic thinking, Discipline, Performance under pressure</li>
+            <li><strong>Transferable Skills:</strong> Applying athletic discipline to academic and technical challenges</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="contact-info">
+        <h2><i class="fas fa-envelope"></i> How to Reach Me</h2>
+        <p>I'm always open to discussing opportunities in tech, innovative projects, or sports!</p>
+        <p><strong>📫 Preferred Contact Method:</strong> Email</p>
+        <a href="mailto:ihamid514@gmail.com" class="email-btn">
+            <i class="fas fa-paper-plane"></i> Email: ihamid514@gmail.com
+        </a>
+    </section>
+
+    <footer>
+        <p>© <span id="currentYear"></span> Hamid Ibrahim. All rights reserved.</p>
+        <p>Portfolio inspired by dedication and a love for code & sport.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
